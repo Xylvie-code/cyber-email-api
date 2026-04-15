@@ -4,7 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
 
 @app.route('/send-report', methods=['POST'])
 def send_report():
@@ -23,6 +23,3 @@ def send_report():
     server.quit()
 
     return jsonify({"status": "sent"})
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=10000)
